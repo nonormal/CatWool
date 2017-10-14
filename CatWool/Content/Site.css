@@ -22,3 +22,46 @@ select,
 textarea {
     max-width: 280px;
 }
+.navbar-inverse {
+    background-color: white;
+    border-color: transparent;
+}
+
+.navbar-fixed-top {
+    height: 95px;
+    
+}
+.container {
+    padding-top: 20px;
+}
+/* The navbar container */
+/* Style the top navigation bar */
+.menu {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* Style the topnav links */
+.menu a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change color on hover */
+.menu a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #0a0a0a;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #0a0a0a;
+}
+.body-content {
+    padding-top: 93px;
+}

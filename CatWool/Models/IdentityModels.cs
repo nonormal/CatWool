@@ -20,6 +20,12 @@ namespace CatWool.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<DetailOrder> DetailOrders { get; set; }
+        public DbSet<Size> Sizes { get; set; }
+        public DbSet<Status> Statuses { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

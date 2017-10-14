@@ -1,0 +1,41 @@
+﻿@model CatWool.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm Sản Phẩm</h2>
+
+@using (Html.BeginForm("AddProduct", "Sale"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m =>m.NameProduct,"Tên Sản Phẩm")
+        @Html.TextBoxFor(m=>m.NameProduct,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Size,"Kích Thước")
+        @Html.DropDownListFor(m => m.Size, new SelectList(Model.Sizes, "Id","Name"), "", new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Describe,"Mô Tả")
+        @Html.TextBoxFor(m=>m.Describe,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Price,"Đơn Giá")
+        @Html.TextBoxFor(m=>m.Price,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.PricePromotion,"Đơn Giá Khuyến Mãi")
+        @Html.TextBoxFor(m=>m.PricePromotion,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Image,"Hình Sản Phẩm")
+        @Html.TextBoxFor(m=>m.Image,new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m =>m.Status,"Tình Trạng")
+        @Html.DropDownListFor(m => m.Status, new SelectList(Model.Statuses, "Id", "Name"), "", new { @class = "form-control" })
+    </div>
+    <button type="submit" value="Save" class="btn btn-primary">Lưu</button>
+
+}
