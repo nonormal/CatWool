@@ -11,7 +11,7 @@ namespace CatWool.Migrations
                 "dbo.Customers",
                 c => new
                     {
-                        Id = c.Byte(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         UserId = c.String(nullable: false, maxLength: 128),
                         NameCustomer = c.String(nullable: false, maxLength: 255),
                         Phone = c.String(),
@@ -84,8 +84,8 @@ namespace CatWool.Migrations
                 "dbo.DetailOrders",
                 c => new
                     {
-                        OrderId = c.Byte(nullable: false),
-                        ProductId = c.Byte(nullable: false),
+                        OrderId = c.Int(nullable: false),
+                        ProductId = c.Int(nullable: false),
                         Amount = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => new { t.OrderId, t.ProductId });
@@ -94,8 +94,8 @@ namespace CatWool.Migrations
                 "dbo.Orders",
                 c => new
                     {
-                        Id = c.Byte(nullable: false),
-                        CustomerId = c.Byte(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        CustomerId = c.Int(nullable: false),
                         DateTime = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

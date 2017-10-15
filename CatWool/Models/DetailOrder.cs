@@ -7,10 +7,10 @@ namespace CatWool.Models
     {
         [Key]
         [Column(Order = 1)]
-        public byte OrderId { get; set; }
+        public int OrderId { get; set; }
         [Key]
         [Column(Order = 2)]
-        public byte ProductId { get; set; }
+        public int ProductId { get; set; }
         public int Amount { get; set; }
     }
 }

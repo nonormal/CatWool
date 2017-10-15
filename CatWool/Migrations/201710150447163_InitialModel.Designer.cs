@@ -13,7 +13,7 @@ namespace CatWool.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150419305_InitialModel"; }
+            get { return "201710150447163_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

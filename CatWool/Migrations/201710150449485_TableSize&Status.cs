@@ -7,7 +7,6 @@ namespace CatWool.Migrations
     {
         public override void Up()
         {
-
             Sql("INSERT INTO STATUS(ID,NAME) VALUES('TRUE','On Sale')");
             Sql("INSERT INTO STATUS(ID,NAME) VALUES('FALSE','Out Sale')");
             Sql("INSERT INTO SIZES(ID,NAME) VALUES(1,'Large')");

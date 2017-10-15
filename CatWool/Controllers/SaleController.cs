@@ -49,6 +49,12 @@ namespace CatWool.Controllers
         [HttpPost]
         public ActionResult AddProduct(ProductViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                viewModel.Sizes = _dbContext.Sizes.ToList();
+                viewModel.Statuses = _dbContext.Statuses.ToList();
+                return View("AddProduct", viewModel);
+            }
             var product = new Product
             {
                 UserId = User.Identity.GetUserId(),

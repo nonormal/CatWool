@@ -8,8 +8,8 @@ namespace CatWool.Models
 {
     public class Order
     { 
-        public byte Id { get; set; }
-        public byte CustomerId { get; set; }
+        public int Id { get; set; }
+        public int CustomerId { get; set; }
         public DateTime DateTime { get; set; }
     }
 }

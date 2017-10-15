@@ -11,10 +11,12 @@
     <div class="form-group">
         @Html.LabelFor(m =>m.NameProduct)
         @Html.TextBoxFor(m=>m.NameProduct,new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.NameProduct,"Không được trống")
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Size,"Kích Thước")
         @Html.DropDownListFor(m => m.Size, new SelectList(Model.Sizes, "Id","Name"), "", new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.Size,"Không được trống")
     </div>
     <div class="form-group">
         @Html.LabelFor(m =>m.Describe,"Mô Tả")
@@ -23,10 +25,12 @@
     <div class="form-group">
         @Html.LabelFor(m =>m.Price,"Đơn Giá")
         @Html.TextBoxFor(m=>m.Price,new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.Price,"Không được trống")
     </div>
     <div class="form-group">
         @Html.LabelFor(m =>m.PricePromotion,"Đơn Giá Khuyến Mãi")
         @Html.TextBoxFor(m=>m.PricePromotion,new {@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.PricePromotion,"Không được trống")
     </div>
     <div class="form-group">
         @Html.LabelFor(m =>m.Image,"Hình Sản Phẩm")
@@ -35,6 +39,7 @@
     <div class="form-group">
         @Html.LabelFor(m =>m.Status,"Tình Trạng")
         @Html.DropDownListFor(m => m.Status, new SelectList(Model.Statuses, "Id", "Name"), "", new { @class = "form-control" })
+        @Html.ValidationMessageFor(m=>m.Status,"Không được trống")
     </div>
     <button type="submit" value="Save" class="btn btn-primary">Lưu</button>
 
