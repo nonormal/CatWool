@@ -5,7 +5,7 @@ namespace CatWool.Models
 {
     public class Product
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
         public ApplicationUser User { get; set; }
 

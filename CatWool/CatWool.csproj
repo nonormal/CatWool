@@ -174,29 +174,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710140902462_InitialModel.cs" />
-    <Compile Include="Migrations\201710140902462_InitialModel.Designer.cs">
-      <DependentUpon>201710140902462_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201710150419305_InitialModel.cs" />
+    <Compile Include="Migrations\201710150419305_InitialModel.Designer.cs">
+      <DependentUpon>201710150419305_InitialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710141012082_AddTableSizeStatus.cs" />
-    <Compile Include="Migrations\201710141012082_AddTableSizeStatus.Designer.cs">
-      <DependentUpon>201710141012082_AddTableSizeStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141013507_TableSize.cs" />
-    <Compile Include="Migrations\201710141013507_TableSize.Designer.cs">
-      <DependentUpon>201710141013507_TableSize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141020542_TableStatus.cs" />
-    <Compile Include="Migrations\201710141020542_TableStatus.Designer.cs">
-      <DependentUpon>201710141020542_TableStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141127561_FixQQ.cs" />
-    <Compile Include="Migrations\201710141127561_FixQQ.Designer.cs">
-      <DependentUpon>201710141127561_FixQQ.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710141632229_UpdateForeignKeyStatus.cs" />
-    <Compile Include="Migrations\201710141632229_UpdateForeignKeyStatus.Designer.cs">
-      <DependentUpon>201710141632229_UpdateForeignKeyStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201710150429388_TableSize&amp;Status.cs" />
+    <Compile Include="Migrations\201710150429388_TableSize&amp;Status.Designer.cs">
+      <DependentUpon>201710150429388_TableSize&amp;Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -284,23 +268,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710140902462_InitialModel.resx">
-      <DependentUpon>201710140902462_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710150419305_InitialModel.resx">
+      <DependentUpon>201710150419305_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141012082_AddTableSizeStatus.resx">
-      <DependentUpon>201710141012082_AddTableSizeStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141013507_TableSize.resx">
-      <DependentUpon>201710141013507_TableSize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141020542_TableStatus.resx">
-      <DependentUpon>201710141020542_TableStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141127561_FixQQ.resx">
-      <DependentUpon>201710141127561_FixQQ.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710141632229_UpdateForeignKeyStatus.resx">
-      <DependentUpon>201710141632229_UpdateForeignKeyStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710150429388_TableSize&amp;Status.resx">
+      <DependentUpon>201710150429388_TableSize&amp;Status.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

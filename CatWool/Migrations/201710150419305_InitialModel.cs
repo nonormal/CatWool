@@ -104,19 +104,41 @@ namespace CatWool.Migrations
                 "dbo.Products",
                 c => new
                     {
-                        Id = c.Byte(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
                         UserId = c.String(maxLength: 128),
                         NameProduct = c.String(nullable: false, maxLength: 255),
-                        Size = c.String(),
+                        SizeId = c.Byte(nullable: false),
                         Describe = c.String(),
                         Price = c.Single(nullable: false),
                         PricePromotion = c.Single(nullable: false),
                         Image = c.String(),
-                        Status = c.Boolean(nullable: false),
+                        StatusId = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Sizes", t => t.SizeId, cascadeDelete: true)
+                .ForeignKey("dbo.Status", t => t.StatusId, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
-                .Index(t => t.UserId);
+                .Index(t => t.UserId)
+                .Index(t => t.SizeId)
+                .Index(t => t.StatusId);
+            
+            CreateTable(
+                "dbo.Sizes",
+                c => new
+                    {
+                        Id = c.Byte(nullable: false),
+                        Name = c.String(nullable: false, maxLength: 25),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Status",
+                c => new
+                    {
+                        Id = c.Boolean(nullable: false),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -134,11 +156,15 @@ namespace CatWool.Migrations
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Products", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.Products", "StatusId", "dbo.Status");
+            DropForeignKey("dbo.Products", "SizeId", "dbo.Sizes");
             DropForeignKey("dbo.Customers", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Products", new[] { "StatusId" });
+            DropIndex("dbo.Products", new[] { "SizeId" });
             DropIndex("dbo.Products", new[] { "UserId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
@@ -147,6 +173,8 @@ namespace CatWool.Migrations
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.Customers", new[] { "UserId" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Status");
+            DropTable("dbo.Sizes");
             DropTable("dbo.Products");
             DropTable("dbo.Orders");
             DropTable("dbo.DetailOrders");
