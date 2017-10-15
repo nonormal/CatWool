@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CatWool.Models;
@@ -8,6 +9,7 @@ namespace CatWool.ViewModels
 {
     public class ProductViewModel
     {
+        [Display(Name = "Tên Sản Phẩm")]
         public string NameProduct { get; set; }
         public byte Size { get; set; }
         public string Describe { get; set; }

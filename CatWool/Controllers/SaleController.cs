@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using CatWool.Models;
 using CatWool.ViewModels;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 namespace CatWool.Controllers
 {
@@ -16,6 +17,16 @@ namespace CatWool.Controllers
         public SaleController()
         {
             _dbContext = new ApplicationDbContext();
+        }
+
+        public ActionResult Index()
+        {
+            var product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.Status)
+                .Include(c => c.User)
+                .Where(w => w.StatusId == true);
+            return View(product);
         }
 
 

@@ -9,7 +9,7 @@
 @using (Html.BeginForm("AddProduct", "Sale"))
 {
     <div class="form-group">
-        @Html.LabelFor(m =>m.NameProduct,"Tên Sản Phẩm")
+        @Html.LabelFor(m =>m.NameProduct)
         @Html.TextBoxFor(m=>m.NameProduct,new {@class="form-control"})
     </div>
     <div class="form-group">

@@ -25,9 +25,8 @@ namespace CatWool.Models
         public float PricePromotion { get; set; }
         public string Image { get; set; }
 
-        public bool Status { get; set; }
+        public Status Status { get; set; }
         [Required]
         public bool StatusId { get; set; }
-
     }
 }
