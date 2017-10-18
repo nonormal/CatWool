@@ -9,6 +9,7 @@ namespace CatWool.ViewModels
 {
     public class ProductViewModel
     {
+        public int Id { get; set; }
         [Display(Name = "Tên Sản Phẩm")]
         [Required(ErrorMessage ="Tên sản phẩm không được trống")]
         [StringLength(255)]
@@ -33,6 +34,15 @@ namespace CatWool.ViewModels
         public IEnumerable<Size> Sizes { get; set; }
 
         public IEnumerable<Status> Statuses { get; set; }
+        public string Heading { get; set; }
+
+        public string Action
+        {
+            get
+            {
+                return (Id != 0) ? "Update" : "AddProduct";
+            }
+        }
 
     }
 }

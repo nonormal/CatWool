@@ -7,6 +7,7 @@ using CatWool.Models;
 using CatWool.ViewModels;
 using Microsoft.AspNet.Identity;
 using System.Data.Entity;
+using System.Security.Cryptography;
 
 namespace CatWool.Controllers
 {
@@ -37,7 +38,8 @@ namespace CatWool.Controllers
             var viewModel = new ProductViewModel
             {
                 Sizes = _dbContext.Sizes.ToList(),
-                Statuses = _dbContext.Statuses.ToList()
+                Statuses = _dbContext.Statuses.ToList(),
+                Heading="Add Product"
             };
 
             return View(viewModel);
@@ -138,5 +140,64 @@ namespace CatWool.Controllers
             return RedirectToAction("Index", "Sale");
         }
 
+        //Get: edit
+        [Authorize]
+        public ActionResult Edit(int id)
+        {
+            var userId = User.Identity.GetUserId();
+            var product = _dbContext.Products.Single(c => c.Id == id && c.UserId == userId);
+
+            var viewModel = new ProductViewModel
+            {
+                Sizes = _dbContext.Sizes.ToList(),
+                Statuses = _dbContext.Statuses.ToList(),
+                NameProduct = product.NameProduct,
+                Price = product.Price,
+                PricePromotion = product.PricePromotion,
+                Size = product.SizeId,
+                Status = product.StatusId,
+                Describe = product.Describe,
+                Image = product.Image,
+                Heading="Edit Product",
+                Id=product.Id
+            };
+            return View("AddProduct", viewModel);
+        }
+
+
+        //Post: edit
+        [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(ProductViewModel viewoModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                viewoModel.Statuses = _dbContext.Statuses.ToList();
+                viewoModel.Sizes = _dbContext.Sizes.ToList();
+                return View("AddProduct", viewoModel);
+            }
+            var userId = User.Identity.GetUserId();
+            var product = _dbContext.Products.Single(c => c.Id == viewoModel.Id && c.UserId == userId);
+
+            product.NameProduct = viewoModel.NameProduct;
+            product.Price = viewoModel.Price;
+            product.PricePromotion = viewoModel.PricePromotion;
+            product.Describe = viewoModel.Describe;
+            product.Image = viewoModel.Image;
+            product.StatusId = viewoModel.Status;
+            product.SizeId = viewoModel.Size;
+            
+            _dbContext.SaveChanges();
+
+            return RedirectToAction("Index", "Sale");
+        }
+
+
+        //Get: details
+        public ActionResult Details()
+        {
+            return View();
+        }
     }
 }

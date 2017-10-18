@@ -257,6 +257,7 @@
     <Content Include="Views\Sale\Delete.cshtml" />
     <Content Include="Views\Sale\IndexDelete.cshtml" />
     <Content Include="Views\Sale\ReDelete.cshtml" />
+    <Content Include="Views\Sale\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

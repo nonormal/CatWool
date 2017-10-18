@@ -6,9 +6,10 @@
 
 <h2>Thêm Sản Phẩm</h2>
 
-@using (Html.BeginForm("AddProduct", "Sale"))
+@using (Html.BeginForm(Model.Action, "Sale"))
 {
     @Html.ValidationSummary(true)
+    @Html.HiddenFor(m=>m.Id)
     <div class="form-group">
         @Html.LabelFor(m =>m.NameProduct)
         @Html.TextBoxFor(m=>m.NameProduct,new {@class="form-control"})
