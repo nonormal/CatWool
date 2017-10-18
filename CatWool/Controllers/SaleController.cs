@@ -121,7 +121,7 @@ namespace CatWool.Controllers
                 .Include(c => c.Size)
                 .Include(c => c.User)
                 .Include(c => c.Status)
-                .Single(c => c.Id == id && c.StatusId == false);
+                .Single(c => c.Id == id);
             return View(product);
         }
 
