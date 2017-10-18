@@ -10,6 +10,7 @@
 {
     @Html.ValidationSummary(true)
     @Html.HiddenFor(m=>m.Id)
+    @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m =>m.NameProduct)
         @Html.TextBoxFor(m=>m.NameProduct,new {@class="form-control"})
