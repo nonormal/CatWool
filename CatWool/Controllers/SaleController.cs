@@ -113,7 +113,7 @@ namespace CatWool.Controllers
             return View(product);
         }
 
-        //Get: Redelete
+        //Get: ReDelete
         [Authorize]
         public ActionResult ReDelete(int id)
         {
