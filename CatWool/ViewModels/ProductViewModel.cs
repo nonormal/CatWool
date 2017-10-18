@@ -9,7 +9,7 @@ namespace CatWool.ViewModels
 {
     public class ProductViewModel
     {
-        //Test up github
+       
         public int Id { get; set; }
         [Display(Name = "Tên Sản Phẩm")]
         [Required(ErrorMessage ="Tên sản phẩm không được trống")]
