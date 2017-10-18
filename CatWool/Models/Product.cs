@@ -28,5 +28,8 @@ namespace CatWool.Models
         public Status Status { get; set; }
         [Required]
         public bool StatusId { get; set; }
+
+
+
     }
 }

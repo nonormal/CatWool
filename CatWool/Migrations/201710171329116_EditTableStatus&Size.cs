@@ -3,7 +3,7 @@ namespace CatWool.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class TableSizeStatus : DbMigration
+    public partial class EditTableStatusSize : DbMigration
     {
         public override void Up()
         {

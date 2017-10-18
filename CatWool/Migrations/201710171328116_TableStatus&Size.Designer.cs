@@ -7,13 +7,13 @@ namespace CatWool.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class TableStatusSize : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(TableStatusSize));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710150447163_InitialModel"; }
+            get { return "201710171328116_TableStatus&Size"; }
         }
         
         string IMigrationMetadata.Source

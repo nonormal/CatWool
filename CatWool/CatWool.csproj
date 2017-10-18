@@ -174,13 +174,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710150447163_InitialModel.cs" />
-    <Compile Include="Migrations\201710150447163_InitialModel.Designer.cs">
-      <DependentUpon>201710150447163_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\201710171328116_TableStatus&amp;Size.cs" />
+    <Compile Include="Migrations\201710171328116_TableStatus&amp;Size.Designer.cs">
+      <DependentUpon>201710171328116_TableStatus&amp;Size.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710150449485_TableSize&amp;Status.cs" />
-    <Compile Include="Migrations\201710150449485_TableSize&amp;Status.Designer.cs">
-      <DependentUpon>201710150449485_TableSize&amp;Status.cs</DependentUpon>
+    <Compile Include="Migrations\201710171329116_EditTableStatus&amp;Size.cs" />
+    <Compile Include="Migrations\201710171329116_EditTableStatus&amp;Size.Designer.cs">
+      <DependentUpon>201710171329116_EditTableStatus&amp;Size.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -254,6 +254,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Sale\AddProduct.cshtml" />
     <Content Include="Views\Sale\Index.cshtml" />
+    <Content Include="Views\Sale\Delete.cshtml" />
+    <Content Include="Views\Sale\IndexDelete.cshtml" />
+    <Content Include="Views\Sale\ReDelete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,11 +271,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710150447163_InitialModel.resx">
-      <DependentUpon>201710150447163_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710171328116_TableStatus&amp;Size.resx">
+      <DependentUpon>201710171328116_TableStatus&amp;Size.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710150449485_TableSize&amp;Status.resx">
-      <DependentUpon>201710150449485_TableSize&amp;Status.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710171329116_EditTableStatus&amp;Size.resx">
+      <DependentUpon>201710171329116_EditTableStatus&amp;Size.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

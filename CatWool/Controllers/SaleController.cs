@@ -72,5 +72,71 @@ namespace CatWool.Controllers
 
             return RedirectToAction("AddProduct", "Sale");
         }
+
+        //Get: Delete
+        [Authorize]
+        public ActionResult Delete(int id)
+        {
+            var product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.User)
+                .Include(c => c.Status)
+                .Single(c => c.Id == id && c.StatusId == true);
+            return View(product);
+        }
+
+        //Post: Delete
+        [Authorize]
+        [HttpPost]
+        public ActionResult Delete(int id,Product product)
+        {
+            product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.User)
+                .Include(c => c.Status)
+                .Single(c => c.Id == id);
+            product.StatusId = false;
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Sale");
+        }
+
+        //Index-Delete
+        public ActionResult IndexDelete()
+        {
+            var product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.Status)
+                .Include(c => c.User)
+                .Where(w => w.StatusId == false);
+            return View(product);
+        }
+
+        //Get: Redelete
+        [Authorize]
+        public ActionResult ReDelete(int id)
+        {
+            var product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.User)
+                .Include(c => c.Status)
+                .Single(c => c.Id == id && c.StatusId == false);
+            return View(product);
+        }
+
+        //Post: Redeltte
+        [Authorize]
+        [HttpPost]
+        public ActionResult ReDelete(int id, Product product)
+        {
+            product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.User)
+                .Include(c => c.Status)
+                .Single(c => c.Id == id);
+            product.StatusId = true;
+            _dbContext.SaveChanges();
+            return RedirectToAction("Index", "Sale");
+        }
+
     }
 }
