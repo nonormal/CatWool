@@ -200,7 +200,7 @@ namespace CatWool.Controllers
 
             //return Content("<script>alert('Đơn hàng đặt thành công, chúng tôi sẽ liên hệ lại sau')</script>");
 
-            return RedirectToAction("Index", "Home", Content("<script>alert('Đơn hàng đặt thành công, chúng tôi sẽ liên hệ lại sau')</script>"));
+            return RedirectToAction("Index", "Home");
         }
     }
 }
