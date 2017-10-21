@@ -11,6 +11,7 @@ using System.Security.Cryptography;
 
 namespace CatWool.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class SaleController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
@@ -73,6 +74,17 @@ namespace CatWool.Controllers
             _dbContext.SaveChanges();
 
             return RedirectToAction("AddProduct", "Sale");
+        }
+
+        //Get: details
+        public ActionResult Details(int id)
+        {
+            var product = _dbContext.Products
+                .Include(c => c.Size)
+                .Include(c => c.User)
+                .Include(c => c.Status)
+                .Single(c => c.Id == id && c.StatusId == true);
+            return View(product);
         }
 
         //Get: Delete
@@ -194,10 +206,6 @@ namespace CatWool.Controllers
         }
 
 
-        //Get: details
-        public ActionResult Details()
-        {
-            return View();
-        }
+       
     }
 }

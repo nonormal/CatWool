@@ -11,7 +11,7 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
@@ -19,23 +19,24 @@
                     <span class="icon-bar"></span>
                 </button>
                 <p>
-                    <a href="/"><img src="~/Content/Images/logo.png"/></a>
+                    <a href="/"><img src="~/Content/Images/logo.png" /></a>
                 </p>
             </div>
             <div class="navbar-collapse collapse">
-                
+
                 @Html.Partial("_LoginPartial")
             </div>
-                <div class="menu">
-                    @Html.ActionLink("Trang Chủ","Index","Home")
-                    @Html.ActionLink("Sản Phẩm","AddProduct","Sale")
-                    @Html.ActionLink("Liên Hệ","Contact","Home")
-                </div>
-            
+            <div class="menu">
+                @Html.ActionLink("Trang Chủ", "Index", "Home")
+                @Html.ActionLink("Sản Phẩm", "AddProduct", "Sale")
+                @Html.ActionLink("Liên Hệ", "Contact", "Home")
+            </div>
+
         </div>
 
     </div>
     <div class="container body-content">
+
         @RenderBody()
         <hr />
         <footer>

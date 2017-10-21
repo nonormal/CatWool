@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<CatWool.Models.Product>
 @{
     ViewBag.Title = "Mèo Len";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
 @*<div class="jumbotron">
@@ -31,12 +32,40 @@
     </div>
 </div>*@
 
+<h1 class="text-danger">Danh sách sản phẩm</h1>
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 text-center">
+                <a href="/Home/DetailsUser/@item.Id">
+                    <img src="@item.Image" alt="image" style="width: 100px; height: 150px"/>
+                    <h3 class="text-danger">@item.NameProduct</h3>
+                    <p class="text-success">@item.Price</p>
+                </a>
+                
+                <p>
+                    <input type="submit" class="btn btn-danger" onclick="AddToCart('@item.Id')"
+                           value="Thêm giỏ hàng"/>
+                </p>
+            </div>
+        }
+    </div>
+</div>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            @item.NameProduct - @item.Price
-        </li>
-    }
-</ul>
+@section Scripts{
+    <!--Gio Hang-->>
+    <script>
+        function AddToCart(id) {
+            $.ajax({
+                type: 'POST',
+                url: '/Home/AddToCart',
+                data: { id: id },
+                success: function(data) {
+               
+                    $("#Cart_Amount").html(data.ItemAmount);
+                }
+            });
+        }
+    </script>
+}
